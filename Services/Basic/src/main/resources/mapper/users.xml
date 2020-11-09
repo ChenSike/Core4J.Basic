@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ikcoder.services.mappers.Mapper$users">
+    <select id="Select$users$id" resultType="ikcoder.services.entity.DTO.coredb_basic.DTO$users">
+        select * from users where id=#{id}
+    </select>
+    <select id="Select$users$username" resultType="ikcoder.services.entity.DTO.coredb_basic.DTO$users">
+        select * from users where username=#{usrname}
+    </select>
+    <insert id="Insert$users">
+        insert into users(username,pwd,status) values(#{username},#{pwd},#{status})
+    </insert>
+    <update id="Update$users$pwd">
+        update users set pwd=#{pwd} where id=#{id}
+    </update>
+    <update id="Update$users$status">
+        update users set status=#{status} where id=#{id}
+    </update>
+    <delete id="Delete$users$id">
+        delete from users where id = #{id}
+    </delete>
+    <delete id="Delete$users$uername">
+        delete from users where username = #{username}
+    </delete>
+</mapper>
